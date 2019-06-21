@@ -1,0 +1,1075 @@
+/*---------------------------------------------------
+    Global
+---------------------------------------------------*/
+
+body {
+  font-family: "Open Sans";
+  background-color: #FCFCFC;
+}
+
+p {
+  margin: 0;
+}
+
+.row {
+  margin: 0;
+  flex-wrap: nowrap;
+}
+
+.col-md-7 {
+  padding: 0;
+}
+
+.sectiontitle {
+  color: white;
+  font-weight: 800;
+  font-size: 60px;
+}
+
+.titlebg {
+  position: relative;
+  z-index: 2;
+  overflow-x: hidden;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container-fluid {
+  padding: 0;
+}
+
+.content-row {
+  height: 53vh;
+  margin: 10% 0 20% 0;
+}
+
+.content-row .col-lg-7 {
+  padding: 0;
+}
+
+.flex-row-centered {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-offset-right {
+  position: relative;
+  right: 9vw;
+}
+
+.content-offset-left {
+  position: relative;
+  left: 9vw;
+}
+
+.bg-gradient-right {
+  background: linear-gradient(to right, #3b28b1, #814ecd);
+}
+
+.bg-gradient-left {
+  background: linear-gradient(to left, #3b28b1, #814ecd);
+}
+
+.gradient-shapes {
+  height: 100%;
+  background-image: url(img/gradient-shapes.svg);
+  background-size: 150%;
+  background-position: center;
+}
+
+.gradient-content {
+  width: 90%;
+  height: 100%;
+  padding: 0 1vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.drop-shadow {
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .25));
+}
+
+.shapes-bg {
+  position: absolute;
+  z-index: -1;
+  height: 140%;
+  width: 140%;
+  background-image: url(img/background-shapes.svg);
+  background-size: 120%;
+  background-position: center;
+  opacity: .4;
+}
+
+.shapes-offset-right {
+  right: 1vw;
+}
+
+.shapes-offset-left {
+  left: 1vw;
+}
+
+.shapes-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: radial-gradient(farthest-side, rgba(0, 0, 0, 0), #FCFCFC);
+}
+
+.mobile-section-heading {
+  display: none;
+}
+
+/* ANIMATIONS */
+
+/* FLIP IN LEFT */
+
+@-webkit-keyframes flipInVerLeft {
+  0% {
+    -webkit-transform: rotateY(80deg);
+    transform: rotateY(80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes flipInVerLeft {
+  0% {
+    -webkit-transform: rotateY(80deg);
+    transform: rotateY(80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+.flipInVerLeft {
+  -webkit-animation: flipInVerLeft 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: flipInVerLeft 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* FLIP IN RIGHT */
+
+@-webkit-keyframes flipInVerRight {
+  0% {
+    -webkit-transform: rotateY(-80deg);
+    transform: rotateY(-80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes flipInVerRight {
+  0% {
+    -webkit-transform: rotateY(-80deg);
+    transform: rotateY(-80deg);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+.flipInVerRight {
+  -webkit-animation: flipInVerRight 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: flipInVerRight 0.75s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+/* FADE IN */
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  -webkit-animation: fadeIn 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  animation: fadeIn 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+/* FADE OUT */
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  -webkit-animation: fadeOut 0.5s ease-out both;
+  animation: fadeOut 0.5s ease-out both;
+}
+
+/*---------------------------------------------------
+    Header
+---------------------------------------------------*/
+
+.headertext {
+  text-align: center;
+  color: white;
+  font-weight: 700;
+  font-size: 50px;
+  font-family: "Open Sans";
+}
+
+.headertext1 {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 700;
+  font-size: 50px;
+  font-family: "Open Sans";
+}
+
+.headertitle {
+  text-align: center;
+  color: white;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.headerparagraph {
+  margin-top: 15%;
+}
+
+.portfolioslider {
+  margin-top: -18%;
+  margin-left: -7.5%;
+}
+
+.portfoliotitle {
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  margin-left: 5%;
+  margin-bottom: 7%;
+  margin-top: 10%;
+}
+
+.portfoliosubtitle {
+  color: white;
+  font-weight: 700;
+  font-size: 20px;
+  margin-left: 5%;
+  margin-top: -20%;
+}
+
+.portfoliodescription {
+  color: white;
+  font-weight: 500;
+  font-size: 15px;
+  margin-left: 5%;
+  padding-right: 40%;
+}
+
+#header {
+  background-image: url(img/HeaderBG1080p.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+}
+
+.logo {
+  height: 6vh;
+  margin-left: 4%;
+  margin-top: 3%;
+}
+
+.headercontent {
+  margin-top: 5%;
+}
+
+.headersocial {
+  color: white;
+  display: block;
+  margin-top: 1%;
+}
+
+.socialbuttons {
+  margin-left: 9.55%;
+  margin-top: 30%;
+}
+
+#three-container {
+  margin-top: -30%;
+  margin-left: -57%;
+  overflow: hidden;
+}
+
+.laptop {
+  background-image: url(img/laptoprender.png);
+  background-repeat: no-repeat;
+  background-size: 65%;
+  background-position: 82% 53%;
+}
+
+.mobilelaptop {
+  display: none;
+}
+
+/*---------------------------------------------------
+    About Us
+---------------------------------------------------*/
+
+#aboutus {
+  margin-top: 10%;
+}
+
+.aboutustext {
+  border-left: 10px solid #4c32b9;
+  padding-left: 5%;
+  font-size: 20px;
+}
+
+.aboutustitle {
+  font-weight: 700;
+  color: #4c32b9;
+}
+
+/*---------------------------------------------------
+    Services
+---------------------------------------------------*/
+
+#mobile-services {
+  display: none;
+}
+
+#content p {
+  color: white;
+}
+
+.service-icon-and-text {
+  background-size: auto 45vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  color: white;
+}
+
+#dev-bg {
+  background-image: url(img/services-icons/dev.svg);
+}
+
+#dep-bg {
+  background-image: url(img/services-icons/deployment.svg);
+}
+
+#opt-bg {
+  background-image: url(img/services-icons/optimization.svg);
+}
+
+#edits-bg {
+  background-image: url(img/services-icons/edits.svg);
+}
+
+#market-bg {
+  background-image: url(img/services-icons/marketing.svg);
+}
+
+#design-bg {
+  background-image: url(img/services-icons/design.svg);
+}
+
+.service-description-subhead {
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.service-description {
+  font-weight: 525;
+  font-size: 20px;
+}
+
+/* SEVICES CONTROL BOX */
+
+#services-links {
+  margin: 0;
+  background-image: radial-gradient(ellipse at center, rgba(195, 173, 232, 1) 0%, rgba(252, 252, 252, 1) 80%, rgba(252, 252, 252, 1) 100%);
+  border: solid 3px rgba(0, 0, 0, 0);
+  border-radius: 1%;
+}
+
+#services-links p, #services-links a {
+  visibility: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 17.5vw;
+  height: 13.333vh;
+  background-color: #FCFCFC;
+  color: #7F4FD0;
+  font-size: 1.3vw;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#services-links p {
+  transition: background-color .5s ease-out;
+  cursor: default;
+}
+
+.left-Links {
+  margin-right: 2px;
+}
+
+.right-links {
+  margin-left: 2px;
+}
+
+.top-link {
+  margin-bottom: 2px;
+}
+
+.middle-link {
+  margin: 2px 0;
+}
+
+.bot-link {
+  margin-top: 2px;
+}
+
+#services-links p:hover {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+/*---------------------------------------------------
+    Clients
+---------------------------------------------------*/
+
+.client-box {
+  position: relative;
+  z-index: 1;
+  width: 35vw;
+  height: 40vh;
+  padding: 3%;
+  background-color: white;
+  border-radius: 1%;
+  overflow: hidden;
+}
+
+.vastlogo {
+  height: 60vh;
+  margin-top: -58%;
+  margin-left: -25%;
+  position: relative;
+  z-index: 1;
+}
+
+.clienttitle {
+  position: relative;
+  z-index: 2;
+  color: #814ecd;
+  font-weight: 900;
+  padding-left: 2.5%;
+  font-size: 35px;
+}
+
+.clienttestimonial {
+  color: #814ecd;
+  font-size: 17px;
+  font-weight: 600;
+  padding-left: 2%;
+  padding-right: 2%;
+  font-weight: 600;
+  margin-top: 8%;
+}
+
+.clientname {
+  color: #814ecd;
+  font-size: 30px;
+  font-weight: 650;
+  text-align: right;
+  padding-right: 10%;
+  margin-top: 8%;
+}
+
+/*---------------------------------------------------
+    Team
+---------------------------------------------------*/
+
+.team-box {
+  width: 35vw;
+  height: 40vh;
+  background-color: white;
+  border-radius: 2%;
+}
+
+.teamimage {
+  width: 200px;
+  height: auto;
+  margin-top: 30%;
+}
+
+.team-box-titles {
+  padding-top: 30%;
+  padding-left: 7%;
+  margin-left: -7%;
+}
+
+.teamname {
+  font-weight: 800;
+  font-size: 33px;
+  color: #814ecd;
+}
+
+.teamrole {
+  font-weight: 600;
+  font-size: 25px;
+  color: #814ecd;
+}
+
+.teamskills {
+  font-weight: 500;
+  font-size: 20px;
+  color: #7d7d7d;
+}
+
+#team-carousel {
+  height: 100%;
+}
+
+/*---------------------------------------------------
+    Contact
+---------------------------------------------------*/
+
+#contact-box {
+  z-index: 1;
+  width: 35vw;
+  height: auto;
+  padding: 3%;
+  background-color: white;
+  border-radius: 1%;
+}
+
+#contact-box .form-group {
+  margin: 0;
+}
+
+#contact-box input, #contact-box textarea {
+  margin-bottom: 3%;
+}
+
+#contact-box button {
+  display: block;
+  margin-left: auto;
+  background-color: #653FC2;
+  border-color: #653FC2;
+}
+
+#contact-button {
+  padding-top: 2%;
+}
+
+/*---------------------------------------------------
+    footer
+---------------------------------------------------*/
+
+#footer {
+  width: 100%;
+  background: linear-gradient(to right, #3b28b1, #814ecd);
+  text-align: center;
+}
+
+.footertext {
+  color: white;
+  text-decoration: none;
+  border: 0;
+  outline: none;
+  margin: 0 1vw;
+}
+
+/*---------------------------------------------------
+Bubbly Button
+---------------------------------------------------*/
+
+.bubbly-button {
+  display: block;
+  font-size: 1.5em;
+  font-weight: 700;
+  padding: 1em 2em;
+  margin-top: 60px;
+  margin-bottom: 60px;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #814ecd;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: transform ease-in 0.1s, box-shadow ease-in 0.25s;
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.5);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bubbly-button:focus {
+  outline: 0;
+}
+
+.bubbly-button:before, .bubbly-button:after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 140%;
+  height: 100%;
+  left: -20%;
+  z-index: 100;
+  transition: all ease-in-out 0.5s;
+  background-repeat: no-repeat;
+}
+
+.bubbly-button:before {
+  display: none;
+  top: -75%;
+  background-image: radial-gradient(circle, #3b28b1 20%, transparent 20%), radial-gradient(circle, transparent 20%, #3b28b1 20%, transparent 30%), radial-gradient(circle, #3b28b1 20%, transparent 20%), radial-gradient(circle, #3b28b1 20%, transparent 20%), radial-gradient(circle, transparent 10%, #3b28b1 15%, transparent 20%), radial-gradient(circle, #3b28b1 20%, transparent 20%), radial-gradient(circle, #3b28b1 20%, transparent 20%), radial-gradient(circle, #3b28b1 20%, transparent 20%), radial-gradient(circle, #3b28b1 20%, transparent 20%);
+  background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+}
+
+.bubbly-button:after {
+  display: none;
+  bottom: -75%;
+  background-image: radial-gradient(circle, #814ecd 20%, transparent 20%), radial-gradient(circle, #814ecd 20%, transparent 20%), radial-gradient(circle, transparent 10%, #814ecd 15%, transparent 20%), radial-gradient(circle, #814ecd 20%, transparent 20%), radial-gradient(circle, #814ecd 20%, transparent 20%), radial-gradient(circle, #814ecd 20%, transparent 20%), radial-gradient(circle, #814ecd 20%, transparent 20%);
+  background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+}
+
+.bubbly-button:active {
+  transform: scale(0.9);
+  background-color: #3b28b1;
+  box-shadow: 0 2px 25px rgba(255, 0, 130, 0.2);
+}
+
+.bubbly-button.animate:before {
+  display: block;
+  animation: topBubbles ease-in-out 0.75s forwards;
+}
+
+.bubbly-button.animate:after {
+  display: block;
+  animation: bottomBubbles ease-in-out 0.75s forwards;
+}
+
+@keyframes topBubbles {
+  0% {
+    background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%, 40% 90%, 55% 90%, 70% 90%;
+  }
+  50% {
+    background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%, 50% 50%, 65% 20%, 90% 30%;
+  }
+  100% {
+    background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%, 50% 40%, 65% 10%, 90% 20%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+@keyframes bottomBubbles {
+  0% {
+    background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%, 70% -10%, 70% 0%;
+  }
+  50% {
+    background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%, 105% 0%;
+  }
+  100% {
+    background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%, 110% 10%;
+    background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+  }
+}
+
+/*---------------------------------------------------
+
+  Media Queries
+
+---------------------------------------------------*/
+
+/* 1280 MEDIA QUERY*/
+
+@media only screen and (max-device-width: 1280px) {
+  /* Header */
+  .headertext {
+    font-size: 35px;
+  }
+  .headertext1 {
+    font-size: 35px;
+  }
+  .headertitle {
+    font-size: 15px;
+  }
+  #vast-video {
+    height: auto;
+    width: 41.5vw;
+  }
+  .portfoliotitle {
+    font-size: 13px;
+    margin-top: 12.5%;
+  }
+  .portfoliosubtitle {
+    font-size: 13px;
+  }
+  .portfoliodescription {
+    font-size: 10px;
+  }
+  .logo {
+    height: 6vh;
+    margin-left: 3%;
+    margin-top: 2%;
+  }
+  .headercontent {
+    margin-top: 5%;
+  }
+  .socialbuttons {
+    margin-left: 7%;
+  }
+  .laptop {
+    background-size: 66%;
+    background-position: 85.75% 52%;
+  }
+  /* About Us */
+  /* Services */
+  /* Clients */
+  .vastlogo {
+    height: 60vh;
+    margin-top: -70%;
+  }
+  .clienttitle {
+    font-size: 25px;
+    margin-top: -1.5%;
+  }
+  .clienttestimonial {
+    font-size: 13px;
+    margin-top: 4%;
+  }
+  .clientname {
+    font-size: 25px;
+    margin-top: 3%;
+  }
+  /* Team */
+  .teamname {
+    font-size: 25px;
+  }
+  .teamrole {
+    font-size: 18px;
+  }
+  .teamskills {
+    font-size: 15px;
+  }
+  .team-box-titles {
+    padding-top: 28%;
+  }
+  /* Contact */
+  /* Footer */
+}
+
+/* MEDIUM MEDIA QUERY */
+
+@media only screen and (max-device-width: 768px) {
+  /* GLOBAL */
+  .row {
+    flex-wrap: wrap;
+  }
+
+  #aboutus {
+    margin-bottom: 10vh;
+  }
+  .content-offset-left {
+    left: 0;
+  }
+  .content-offset-right {
+    right: 0;
+  }
+  .shapes-bg {
+    width: 100%;
+    height: 100%;
+  }
+  .shapes-offset-left {
+    left: 0;
+  }
+  .shapes-offset-right {
+    right: 0;
+  }
+  .desktop-section-heading {
+    display: none;
+  }
+  .mobile-section-heading {
+    display: block;
+  }
+  .content-row {
+    height: auto;
+    margin: 0;
+  }
+  .content-row .col-lg-5 {
+    height: 20vh;
+  }
+  .gradient-content {
+    width: 100%;
+    height: 30vh;
+    padding: 0;
+  }
+  .shapes-bg {
+    background-image: none;
+  }
+  .content-offset-up {
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 10vh;
+  }
+  .sectiontitle {
+    position: relative;
+    bottom: 6vh;
+  }
+  /* SERVICES */
+  #mobile-services {
+    display: flex;
+  }
+  #desktop-services {
+    display: none;
+  }
+  #services-links {
+    border-width: 5px;
+  }
+  #services-links a {
+    width: 35vw;
+    height: 9vh;
+    font-size: 2.2vw;
+  }
+
+  /* CLIENTS */
+  #client-carousel img {
+    width: auto;
+  }
+
+  .vastlogo {
+    height: 36vh;
+    margin-left: -12%;
+    margin-top: -35%;
+  }
+
+  .client-box {
+    width: 75vw;
+    height: 24vh;
+  }
+
+  .clienttitle {
+    font-size: 30px;
+  }
+
+  .clienttestimonial {
+    font-size: 18px;
+    margin-top: 2%;
+  }
+
+  .clientname {
+    font-size: 30px;
+    margin-top: 1%;
+  }
+
+  /* TEAM */
+  .team-box {
+    width: 75vw;
+    height: 24vh;
+  }
+  .teamimage {
+    margin-top: 7%
+  }
+  .team-box-titles {
+    padding-top: 13%;
+  }
+  .teamname {
+    margin-top: 8%;
+  }
+  .teamname {
+    font-size: 25px;
+  }
+  .teamrole {
+    font-size: 20px;
+  }
+  .teamskills {
+    font-size: 18px;
+  }
+
+  /* CONTACT */
+  #contact-box {
+    width: 75vw;
+  }
+}
+
+/* iPhone X */
+@media only screen and (min-height: 736px) {
+  .mobilelaptop {
+    margin-top: 10vh;
+    margin-left: -8vw;
+  }
+}
+
+/* Iphone 6/7/8 */
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+  /* GLOBAL */
+  .content-row {
+    height: auto;
+  }
+  /* Header */
+  #header {
+    background-image: url(img/HeaderBGMobile.jpg);
+    height: 80vh;
+  }
+  #three-container {
+    display: none;
+  }
+  .headertext {
+    font-size: 50px;
+  }
+  .headertext1 {
+    font-size: 50px;
+  }
+  .headertitle {
+    margin-top: 30%;
+    font-size: 35px;
+  }
+  #vast-video {
+    height: auto;
+    width: 83.5vw;
+  }
+  .portfolioslider {
+    margin-top: 20%;
+    margin-left: 7.25%;
+    overflow: hidden;
+  }
+  .portfoliotitle {
+    font-size: 40px;
+    margin-bottom: 3%;
+  }
+  .portfoliosubtitle {
+    font-size: 35px;
+    color: #814ecd;
+    margin-top: -85%;
+  }
+  .portfoliodescription {
+    font-size: 22px;
+    color: #814ecd;
+  }
+  .logo {
+    height: 6vh;
+    margin-left: 45%;
+    margin-top: 8%;
+  }
+  .headercontent {
+    margin-top: 5%;
+  }
+  .headersocial {
+    display: inline;
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+  .socialbuttons {
+    margin-left: 37%;
+    margin-top: 5%;
+    font-size: 30px;
+  }
+  .laptop {
+    background-size: 66%;
+    background-position: 95.5% 25%;
+  }
+  .mobilelaptop {
+    display: block;
+    height: 70vh;
+    width: 70vh;
+    background-image: url(img/laptoprendermobile1.png);
+    background-repeat: no-repeat;
+    background-size: 65%;
+  }
+  .mobilelaptop:focus {
+    background-image: url(img/laptoprendermobile2.png);
+  }
+  /* About Us */
+
+  #aboutus {
+    margin-top: 90%;
+  }
+  .aboutusdescription {
+    font-size: 25px;
+    margin-bottom: 20%;
+  }
+
+  /* Services */
+  #services-links a {
+    width: 37.5vw;
+    height: 8vh;
+  }
+
+  /* Clients */
+  .vastlogo {
+    height: 40vh;
+    margin-top: -60%;
+  }
+
+  .clienttitle {
+    font-size: 40px;
+    margin-top: 1.5%;
+  }
+  .clienttestimonial {
+    font-size: 20px;
+    margin-top: 4%;
+  }
+  .clientname {
+    font-size: 40px;
+    margin-top: -0.5%;
+  }
+
+  /* Team */
+  .teamimage {
+    margin-top: 30%;
+  }
+  .team-box-titles {
+    padding-top: 28%;
+  }
+
+  /* Contact */
+
+  /* Footer */
+}
