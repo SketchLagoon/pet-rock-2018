@@ -69,8 +69,6 @@ for (var i = 0; i < bubblyButtons.length; i++) {
 
 // header slider three.js
 
-
-
 window.onload = init;
 console.ward = function() {}; // what warnings?
 
@@ -85,8 +83,8 @@ function init() {
   root.renderer.setPixelRatio(window.devicePixelRatio || 1);
   root.camera.position.set(0, 0, 60);
 
-  var width = 76;
-  var height = 51;
+  var width = 70;
+  var height = 46;
 
   var slide = new Slide(width, height, 'out');
 	var l1 = new THREE.ImageLoader();
@@ -117,6 +115,7 @@ function init() {
       tl.paused(!tl.paused());
     }
   });
+  console.log(root.scene)
 }
 
 ////////////////////
